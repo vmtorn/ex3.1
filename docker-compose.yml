@@ -13,7 +13,7 @@ services:
     build: example-frontend/.
     container_name: frontend
   backend:
-    build: example-backend/example-backend/.
+    build: example-backend/.
     container_name: backend
     environment: 
       - REDIS_HOST=redis
