@@ -9,10 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: akhileshns/heroku-deploy@v3.12.12 # this is the action
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build, push and Deploy to Heroku
+    - uses: jctaveras/heroku-deploy|v1.0.0 #akhileshns/heroku-deploy@v3.12.12
       with:
-        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-        heroku_app_name: "ex31-vmtorn"
-        heroku_email: "vtorniko@gmail.com"
-        usedocker: true
+        api_key: ${{ secrets.HEROKU_API_KEY }}
+        app_name: "ex31-vmtorn"
+        email: "vtorniko@gmail.com"
